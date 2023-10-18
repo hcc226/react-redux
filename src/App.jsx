@@ -6,6 +6,7 @@ import { add } from './store/modules/countStore'
 import { useSelector, useDispatch } from 'react-redux'
 import NestedCheck from './components/NestedCheck/'
 import { useState } from 'react';
+import Swiper from './components/Swiper'
 
 function App() {
   let [data, setData] = useState([
@@ -47,10 +48,27 @@ function App() {
     dispatch(action)
   }
 
+
+  let imageList = [
+    {
+      source: 'https://cdn.pixabay.com/photo/2022/10/27/00/11/japanese-maple-7549741_1280.jpg',
+    },
+    {
+      source: 'https://media.istockphoto.com/id/1495554107/photo/green-maple-leaf-at-maple-tree-in-japan-nature-park.jpg?s=1024x1024&w=is&k=20&c=bhfFMBKbaL4R8Pmi1hSP_jKXjiwHaSHQvA5uNS8Y1B0=',
+    },
+    {
+      source: 'https://img.soundofhope.org/2020-10/1601870032118.jpg',
+    },
+    {
+      source: 'http://image.seohost.cn/storage/11003/article/20191114/1573722504675049.jpg',
+    }
+  ]
+
   return (
     <>
       <div>
         <NestedCheck data={data}></NestedCheck>
+        <Swiper imageList={imageList}></Swiper>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
