@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import NestedCheck from './components/NestedCheck/'
 import { useState } from 'react';
 import Swiper from './components/Swiper'
+import StarRating from './components/StarRating'
 
 function App() {
   let [data, setData] = useState([
@@ -69,6 +70,7 @@ function App() {
       <div>
         <NestedCheck data={data}></NestedCheck>
         <Swiper imageList={imageList}></Swiper>
+        <StarRating initialRate={3.5} totalRate={5}></StarRating>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
