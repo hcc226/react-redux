@@ -8,6 +8,7 @@ import NestedCheck from './components/NestedCheck/'
 import { useState } from 'react';
 import Swiper from './components/Swiper'
 import StarRating from './components/StarRating'
+import ProgressBar from './components/ProgressBar'
 
 function App() {
   let [data, setData] = useState([
@@ -79,6 +80,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <ProgressBar completed={80} maxCompleted={200}></ProgressBar>
       <div className="card">
         <button onClick={clickHandler}>
           count is {count}

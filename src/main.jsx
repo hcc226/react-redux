@@ -8,7 +8,7 @@ import InfiniteScrollDemo from './pages/infiniteScrollDemo.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store} >
-    {/* <App /> */}
-    <InfiniteScrollDemo></InfiniteScrollDemo>
+    <App />
+    {/* <InfiniteScrollDemo></InfiniteScrollDemo> */}
   </Provider>
 )
