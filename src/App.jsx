@@ -9,6 +9,7 @@ import { useState } from 'react';
 import Swiper from './components/Swiper'
 import StarRating from './components/StarRating'
 import ProgressBar from './components/ProgressBar'
+import ToDoList from './components/ToDoList'
 
 function App() {
   let [data, setData] = useState([
@@ -81,6 +82,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <ProgressBar completed={80} maxCompleted={200}></ProgressBar>
+
+      <ToDoList></ToDoList>
       <div className="card">
         <button onClick={clickHandler}>
           count is {count}
