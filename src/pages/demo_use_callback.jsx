@@ -41,7 +41,6 @@ export default function Parent() {
                 <button onClick={() => setCount(count + 1)}>+</button>
                 <input value={val} onChange={event => setVal(event.target.value)}/>
             </div>
-
             <Child callback={callback} />
         </div>
     )

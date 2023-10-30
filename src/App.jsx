@@ -12,6 +12,7 @@ import ProgressBar from './components/ProgressBar'
 import ToDoList from './components/ToDoList'
 import MyComponent from './pages/demo_use_memo'
 import Parent from './pages/demo_use_callback'
+import UseCtxDemo from './pages/demo_use_context'
 
 function App() {
   let [data, setData] = useState([
@@ -88,6 +89,7 @@ function App() {
       <ToDoList></ToDoList>
       <MyComponent></MyComponent>
       <Parent></Parent>
+      <UseCtxDemo></UseCtxDemo>
 
       <div className="card">
         <button onClick={clickHandler}>
