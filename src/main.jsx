@@ -12,3 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <InfiniteScrollDemo></InfiniteScrollDemo> */}
   </Provider>
 )
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <InfiniteScrollDemo></InfiniteScrollDemo>
+// )

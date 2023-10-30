@@ -10,6 +10,8 @@ import Swiper from './components/Swiper'
 import StarRating from './components/StarRating'
 import ProgressBar from './components/ProgressBar'
 import ToDoList from './components/ToDoList'
+import MyComponent from './pages/demo_use_memo'
+import Parent from './pages/demo_use_callback'
 
 function App() {
   let [data, setData] = useState([
@@ -84,6 +86,9 @@ function App() {
       <ProgressBar completed={80} maxCompleted={200}></ProgressBar>
 
       <ToDoList></ToDoList>
+      <MyComponent></MyComponent>
+      <Parent></Parent>
+
       <div className="card">
         <button onClick={clickHandler}>
           count is {count}
