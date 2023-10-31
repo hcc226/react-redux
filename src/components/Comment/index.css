@@ -1,0 +1,27 @@
+.comment-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+    align-items:start;
+}
+
+.content-container {
+    width: calc(100vw - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.last-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100vw - 100px);
+}

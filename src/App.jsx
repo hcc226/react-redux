@@ -13,6 +13,7 @@ import ToDoList from './components/ToDoList'
 import MyComponent from './pages/demo_use_memo'
 import Parent from './pages/demo_use_callback'
 import UseCtxDemo from './pages/demo_use_context'
+import Counter from './pages/demo_use_reducer'
 
 function App() {
   let [data, setData] = useState([
@@ -90,6 +91,7 @@ function App() {
       <MyComponent></MyComponent>
       <Parent></Parent>
       <UseCtxDemo></UseCtxDemo>
+      <Counter></Counter>
 
       <div className="card">
         <button onClick={clickHandler}>
