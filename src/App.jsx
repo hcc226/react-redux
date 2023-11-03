@@ -14,6 +14,7 @@ import MyComponent from './pages/demo_use_memo'
 import Parent from './pages/demo_use_callback'
 import UseCtxDemo from './pages/demo_use_context'
 import Counter from './pages/demo_use_reducer'
+import ContentTree from './components/ContentTree'
 
 function App() {
   let [data, setData] = useState([
@@ -47,6 +48,49 @@ function App() {
         ]
     }
 ])
+
+  let [contentData, setContentData] = useState([
+    {
+        id: '1',
+        text: 'parent1',
+        children: [
+            {
+                id: '4',
+                text: 'chid2',
+                children: [{
+                    id: '3',
+                    text: 'chid4'
+                }]
+            }
+        ]
+    },
+    {
+        id: '2',
+        text: 'parent2',
+    }
+]);
+
+
+  let setTreeId = (id, contentData) => {
+    for (let i = 0; i < contentData.length; i++){
+      if (contentData[i].id === id) {
+        contentData[i].close = !contentData[i].close;
+        return;
+      } else {
+        contentData[i].children && setTreeId(id, contentData[i].children)
+      }
+    }
+  }
+
+
+  let handleClose = (id) => {
+    setTreeId(id, contentData)
+    setContentData([...contentData])
+    console.log(contentData, 'cccdsdadas')
+  }
+
+
+
   const { count } = useSelector(state => state.counter)
 
   const dispatch = useDispatch()
@@ -92,6 +136,8 @@ function App() {
       <Parent></Parent>
       <UseCtxDemo></UseCtxDemo>
       <Counter></Counter>
+
+      <ContentTree data={contentData} onExpand={handleClose}></ContentTree>
 
       <div className="card">
         <button onClick={clickHandler}>

@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 enum COUNT_STATUS {
     STOP = 0,
     START = 1
@@ -26,7 +26,6 @@ export default function CountDown (props) {
         let timer;
         if (status === COUNT_STATUS.START) {
             let stopTime = Date.now() + (hour * 3600 + minute * 60 + second) * 1000
-            // setStartTime(Date.now())
             intervalCallback(stopTime)
             timer = setInterval(() => {
                 intervalCallback(stopTime);

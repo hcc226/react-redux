@@ -11,8 +11,9 @@ import CountDown from './pages/count_down.tsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store} >
     {/* <CommentList /> */}
-    <CountDown hour={1} minute={5}></CountDown>
+    {/* <CountDown hour={1} minute={5}></CountDown> */}
     {/* <InfiniteScrollDemo></InfiniteScrollDemo> */}
+    <App></App>
   </Provider>
 )
 
