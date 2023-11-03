@@ -6,10 +6,12 @@ import store from './store/index.js'
 import { Provider } from 'react-redux'
 import InfiniteScrollDemo from './pages/infiniteScrollDemo.jsx'
 import CommentList from './pages/comment_list.tsx'
+import CountDown from './pages/count_down.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store} >
-    <CommentList />
+    {/* <CommentList /> */}
+    <CountDown hour={1} minute={5}></CountDown>
     {/* <InfiniteScrollDemo></InfiniteScrollDemo> */}
   </Provider>
 )
