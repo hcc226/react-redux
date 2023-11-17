@@ -1,6 +1,8 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Drawflow from 'drawflow';
+import exportData from './assets/flow.json'
 
 import { add } from './store/modules/countStore'
 import { useSelector, useDispatch } from 'react-redux'
@@ -15,6 +17,7 @@ import Parent from './pages/demo_use_callback'
 import UseCtxDemo from './pages/demo_use_context'
 import Counter from './pages/demo_use_reducer'
 import ContentTree from './components/ContentTree'
+import { useEffect } from 'react'
 
 function App() {
   let [data, setData] = useState([
@@ -115,6 +118,36 @@ function App() {
     }
   ]
 
+  useEffect(() => {
+    var id = document.getElementById("drawflow");
+    const editor = new Drawflow(id);
+    editor.createCurvature();
+
+    editor.line_path = 1;
+    
+    editor.reroute = true;
+    editor.reroute_fix_curvature = true;
+    editor.curvature = 0.1;
+    editor.reroute_curvature = 0.1;
+    console.log(exportData);
+    // editor.on('import', function() {
+    //   for(..) {
+    //     editor.updateConnectionNodes(id) // ex: editor.updateConnectionNodes('node-5') 
+    //   }
+    // })
+    editor.start();
+    setTimeout(() => { 
+      //editor.import(YOUR DATA); 
+      editor.import({ "drawflow": { "Home": { "data": { "1": { "id": 1, "name": "job1", "data": {}, "class": "", "html": "<div>job1</div>", "typenode": false, "inputs": {}, "outputs": { "output_1": { "connections": [ { "node": "2", "output": "input_1" } ] } }, "pos_x": 65.42498779296875, "pos_y": 175.28749084472656 }, "2": { "id": 2, "name": "job2", "data": {}, "class": "", "html": "<div>job2</div>", "typenode": false, "inputs": { "input_1": { "connections": [ { "node": "1", "input": "output_1" } ] } }, "outputs": {}, "pos_x": 464.42498779296875, "pos_y": 135.28749084472656 } } } } })
+    }, 1000);
+    // var html = document.createElement("div");
+    // html.innerHTML =  "Hello Drawflow!!";
+    // editor.registerNode('test', html);
+    // // Use
+    // editor.addNode('github', 0, 1, 150, 300, 'github', data, 'test', true);
+    
+  }, []);
+
   return (
     <>
       <div>
@@ -130,7 +163,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <ProgressBar completed={80} maxCompleted={200}></ProgressBar>
-
+      <div id="drawflow" style={{height: '1000px'}}></div>
       <ToDoList></ToDoList>
       <MyComponent></MyComponent>
       <Parent></Parent>
