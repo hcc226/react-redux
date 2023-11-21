@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <div>
+        <div>
+         
+                <label for="name">name:</label>
+                <input id="name" type="text">
+    
+                <label for="email">email:</label>
+                <input id="email" type="email">
+    
+                <label for="mobile">Mobile:</label>
+                <input id="mobile" type="text">
+
+                <button type="button" onclick="handleSubmit()">Submit</button>
+          
+           
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        Mobile
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>
+                        Jone
+                    </td>
+                    <td>
+                        Jone@gmail.com
+                    </td>
+                    <td>
+                        5431761999
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+        // Email: required!
+        // (1)start with a letter
+        // (2)Before @:  
+        //   length between 2 and 10;
+        //   it can contain combinations of only letters, digits, and dots.
+        // (3) Afer @ and before dot:
+        //   length between 2 and 20;
+        //   mush alphabets
+        // (4) After dot:
+        //   2 to 10 alphabetic characters
+
+        const isValidMail = (str) => {
+            console.log('isvvvvv', str)
+            let e = /^[a-zA-Z][\da-zA-Z.]{2,10}@[a-zA-Z]{2,10}.[a-zA-Z]{2,10}$/
+            //console.log()
+            return e.test(str)
+        }
+
+
+        var handleSubmit = () => {
+            console.log('ddd')
+            let phoneNumber = document.getElementById('mobile').value;
+            // console.log(phoneNumber, document.getElementById('mobile'))
+            let mail = document.getElementById('email').value;
+            let name = document.getElementById('name').value;
+
+            let e = /\d{10}/
+            
+            if (!isValidMail(mail)) {
+                alert('invalid email')
+            }
+            if (phoneNumber.length !== 10) {
+                alert('invalid phone number')
+            } else if (!e.test(phoneNumber)) {
+                alert('please input digital')
+            } else {
+                let str = `<tr><td>${name}</td><td>${mail}</td><td>${phoneNumber}</td>`;
+                const tb = document.getElementById('tableBody');
+                str = tb.innerHTML + str
+                tb.innerHTML = str;
+            }
+        }
+    </script>
+</body>
+
+</html>

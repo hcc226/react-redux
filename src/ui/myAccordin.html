@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+
+    <style>
+        .title-container {
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+
+        .title-head {
+            background: gray;
+            padding: 10px 10px;
+        }
+
+        .title-head:hover {
+            cursor:pointer;
+        }
+
+        .title-content {
+            padding: 10px 10px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" onclick="handleCheck()"> <span>Allow multiple expansions</span>
+    </div>
+    <div>
+        <div id="title1" class="title-container">
+            <div id="title1-head" class="title-head" onclick="handleExpand(1)"> <span>title1</span></div>
+            <div id="title1-content" class="title-content" style="display: none;">content for title1</div>
+        </div>
+        <div id="title2" class="title-container" >
+            <div id="title2-head" class="title-head"onclick="handleExpand(2)"> <span>title2</span></div>
+            <div id="title2-content" class="title-content" style="display: none;">content for title2</div>
+        </div>
+        <div id="title3" class="title-container" >
+            <div id="title3-head" class="title-head" onclick="handleExpand(3)"> <span>title2</span></div>
+            <div id="title3-content" class="title-content" style="display: none;">content for title3</div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let allowMulExp = false;
+    const handleCheck = () => {
+        allowMulExp  = !allowMulExp;
+    }
+
+    const handleExpand = (number) => {
+        let dom = document.getElementById(`title${number}-content`);
+        let display = dom.style.display;
+        dom.style.display = display === 'none' ? 'block' : 'none'
+
+        if(!allowMulExp && display === 'none') {
+            // change other titile to unexpand
+            for(let i = 1; i <= 3; i++) {
+                if (i !== number) {
+                    document.getElementById(`title${i}-content`).style.display = 'none';
+                }
+            }
+        }
+    }
+
+
+
+</script>
+</html>
