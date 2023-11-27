@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 200px;
+            background-color: gainsboro;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+        }
+
+        .chat-li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .other {
+            display: flex;
+            justify-content: start;
+            position: relative;
+        }
+
+        .avartar {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: bisque;
+        }
+
+        .other-message {
+            margin-left: 10px;
+            max-width: 40%;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .other-message::before {
+            position: absolute;
+            top: 35px;
+            left: 90px;
+            height: 0;
+            width: 0;
+            content: '';
+            border-right: 10px white solid;
+            border-bottom: 10px transparent solid;
+            border-left: 10px transparent solid;
+            border-top: 10px transparent solid;
+        }
+
+        .myself-message::after {
+            position: absolute;
+            top: 35px;
+            right: 90px;
+            height: 0;
+            width: 0;
+            content: '';
+            border-left: 10px greenyellow solid;
+            border-bottom: 10px transparent solid;
+            border-right: 10px transparent solid;
+            border-top: 10px transparent solid;
+        }
+
+        .myself {
+            display: flex;
+            justify-content: end;
+            position: relative;
+        }
+
+        .myself-message {
+            padding: 10px;
+            margin-right: 10px;
+            max-width: 40%;
+            background-color: greenyellow;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .message-text {
+            font-size: 30px;
+        }
+
+        .avartar-container {
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">今天我们有猜字</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">啥猜字</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">游戏</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">好玩吗</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">还挺好玩的，赢了好多玩具，回家给你带回去哈哈哈哈</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">今天我们有猜字</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">啥猜字</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">游戏</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">好玩吗</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">还挺好玩的，赢了好多玩具，回家给你带回去哈哈哈哈</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">今天我们有猜字</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">啥猜字</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">游戏</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">好玩吗</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">还挺好玩的，赢了好多玩具，回家给你带回去哈哈哈哈</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">今天我们有猜字</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">啥猜字</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">游戏</span>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="myself">
+                    <div class="myself-message">
+                        <span class="message-text">好玩吗</span>
+                    </div>
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                </div>
+            </li>
+            <li class="chat-li">
+                <div class="other">
+                    <div class="avartar-container">
+                        <image class="avartar" src></image>
+                    </div>
+                    <div class="other-message">
+                        <span class="message-text">还挺好玩的，赢了好多玩具，回家给你带回去哈哈哈哈</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
